@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="220.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label alignment="CENTER" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Цветовая тема" textAlignment="CENTER" wrapText="false">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <textFill>
+            <Color blue="0.624" green="0.624" red="0.624" fx:id="x2" />
+         </textFill>
+         <VBox.margin>
+            <Insets left="8.0" right="8.0" top="8.0" />
+         </VBox.margin>
+      </Label>
+      <ColorPicker prefHeight="25.0" prefWidth="210.0">
+         <VBox.margin>
+            <Insets left="8.0" right="8.0" top="4.0" />
+         </VBox.margin>
+      </ColorPicker>
+      <Label alignment="CENTER" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Цвет вершин" textAlignment="CENTER" wrapText="false">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <textFill>
+            <Color blue="0.624" green="0.624" red="0.624" fx:id="x21" />
+         </textFill>
+         <VBox.margin>
+            <Insets left="8.0" right="8.0" top="8.0" />
+         </VBox.margin>
+      </Label>
+      <ColorPicker prefHeight="25.0" prefWidth="210.0">
+         <VBox.margin>
+            <Insets left="8.0" right="8.0" top="4.0" />
+         </VBox.margin>
+      </ColorPicker>
+   </children>
+</VBox>

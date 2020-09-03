@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="root" minHeight="500.0" minWidth="720.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="info.yantikov.graph.controllers.MainController">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu fx:id="actions" mnemonicParsing="false" text="Действия">
+          <items>
+                  <MenuItem mnemonicParsing="false" onAction="#openFile" text="Открыть" />
+                  <MenuItem mnemonicParsing="false" onAction="#saveFile" text="Сохранить" />
+                  <MenuItem mnemonicParsing="false" onAction="#printout" text="Печать" />
+            <MenuItem mnemonicParsing="false" onAction="#quit" text="Выход" />
+          </items>
+        </Menu>
+            <Menu fx:id="handling" mnemonicParsing="false" text="Управление">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#vertexMenuButton" text="Добавить вершину" />
+                  <MenuItem mnemonicParsing="false" onAction="#removeVertexMenuButton" text="Удалить вершину" />
+                  <MenuItem mnemonicParsing="false" onAction="#edgeMenuButton" text="Добавить ребро" />
+                  <MenuItem mnemonicParsing="false" onAction="#removeEdgeMenuButton" text="Удалить ребро" />
+                  <MenuItem mnemonicParsing="false" onAction="#clearAllMenuButton" text="Очистить все" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Методы решения">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#runDijkstraMenuButton" text="Дейкстра" />
+                  <MenuItem mnemonicParsing="false" onAction="#runFordMenuButton" text="Беллман-Форд" />
+                  <MenuItem mnemonicParsing="false" onAction="#runFloydMenuButton" text="Флойд-Уоршелл" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Цвета">
+              <items>
+                  <MenuItem mnemonicParsing="false" onAction="#palette" text="Палитра" />
+                <MenuItem mnemonicParsing="false" onAction="#defaultColors" text="По умолчанию" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Помощь">
+              <items>
+            <MenuItem mnemonicParsing="false" onAction="#aboutProgram" text="О программе" />
+                <MenuItem mnemonicParsing="false" onAction="#showInstruction" text="Инструкция" />
+                  <MenuItem mnemonicParsing="false" onAction="#theory" text="Теория" />
+              </items>
+            </Menu>
+      </menus>
+    </MenuBar>
+    <SplitPane fx:id="mainPane" dividerPositions="0.19525065963060687, 0.7308707124010554" focusTraversable="true" prefWidth="788.0" VBox.vgrow="ALWAYS">
+      <items>
+        <AnchorPane maxWidth="200.0" minWidth="-Infinity" prefWidth="145.0">
+          <children>
+            <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Управление" textAlignment="CENTER" wrapText="false" AnchorPane.leftAnchor="8.0" AnchorPane.topAnchor="8.0">
+              <font>
+                <Font size="14.0" />
+              </font>
+              <textFill>
+                <Color blue="0.624" green="0.624" red="0.624" fx:id="x2" />
+              </textFill>
+            </Label>
+                  <VBox layoutX="18.0" layoutY="43.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="32.0">
+                     <children>
+                        <ToggleButton fx:id="vertexToggleButton" mnemonicParsing="false" onAction="#handleControls" prefHeight="25.0" prefWidth="200.0" text="Добавить вершину">
+                           <VBox.margin>
+                              <Insets left="4.0" right="4.0" top="4.0" />
+                           </VBox.margin>
+                           <toggleGroup>
+                              <ToggleGroup fx:id="controls" />
+                           </toggleGroup>
+                        </ToggleButton>
+                        <ToggleButton fx:id="deleteVertexToggleButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="200.0" text="Удалить вершину" toggleGroup="$controls">
+                           <VBox.margin>
+                              <Insets left="4.0" right="4.0" top="4.0" />
+                           </VBox.margin>
+                        </ToggleButton>
+                        <ToggleButton fx:id="edgeToggleButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="200.0" text="Добавить ребро" toggleGroup="$controls">
+                           <VBox.margin>
+                              <Insets left="4.0" right="4.0" top="4.0" />
+                           </VBox.margin>
+                        </ToggleButton>
+                        <ToggleButton fx:id="deleteEdgeToggleButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="200.0" text="Удалить ребро" toggleGroup="$controls">
+                           <VBox.margin>
+                              <Insets left="4.0" right="4.0" top="4.0" />
+                           </VBox.margin>
+                        </ToggleButton>
+                        <Button fx:id="clearAllButton" mnemonicParsing="false" onAction="#handleControls" prefHeight="25.0" prefWidth="200.0" text="Очистить все">
+                           <VBox.margin>
+                              <Insets left="4.0" right="4.0" top="4.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Separator prefWidth="200.0">
+                           <VBox.margin>
+                              <Insets left="4.0" right="4.0" top="4.0" />
+                           </VBox.margin>
+                        </Separator>
+                        <Button fx:id="dijkstraButton" mnemonicParsing="false" onAction="#runDijkstra" prefHeight="25.0" prefWidth="200.0" text="Дейкстра">
+                           <VBox.margin>
+                              <Insets left="4.0" right="4.0" top="4.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="fordButton" mnemonicParsing="false" onAction="#runFord" prefHeight="25.0" prefWidth="200.0" text="Беллман-Форд">
+                           <VBox.margin>
+                              <Insets left="4.0" right="4.0" top="4.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="floydButton" mnemonicParsing="false" onAction="#runFloyd" prefHeight="25.0" prefWidth="200.0" text="Флойд-Уоршелл">
+                           <VBox.margin>
+                              <Insets left="4.0" right="4.0" top="4.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+          </children>
+        </AnchorPane>
+      <AnchorPane id="Content" fx:id="graphAnchorPane" minHeight="-1.0" minWidth="-1.0" prefWidth="411.0">
+        <children>
+          <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" style="&#10;" text="Граф" textAlignment="CENTER" textFill="$x2" wrapText="false" AnchorPane.leftAnchor="8.0" AnchorPane.topAnchor="8.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Pane fx:id="graphPane" layoutX="59.0" layoutY="178.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="265.0" prefWidth="376.0" style="-fx-background-color: #ffffff; -fx-border-color: #808080; -fx-border-width: 2;" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="32.0" />
+        </children>
+      </AnchorPane>
+        <AnchorPane fx:id="outInfo">
+          <children>
+            <Label alignment="CENTER" layoutX="8.0" layoutY="14.0" style="&#10;" text="Матрица смежности" textAlignment="CENTER" textFill="$x2" wrapText="false" AnchorPane.leftAnchor="8.0" AnchorPane.topAnchor="8.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                  <SplitPane dividerPositions="0.5" layoutX="8.0" layoutY="28.0" orientation="VERTICAL" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="32.0">
+                    <items>
+                      <AnchorPane>
+                           <children>
+                              <TableView fx:id="matrixTableView" layoutX="14.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane>
+                           <children>
+                              <Label alignment="CENTER" layoutX="14.0" layoutY="4.0" style="&#10;" text="Вывод" textAlignment="CENTER" wrapText="false" AnchorPane.leftAnchor="8.0" AnchorPane.topAnchor="8.0">
+                                 <textFill>
+                                    <Color blue="0.624" green="0.624" red="0.624" fx:id="x21" />
+                                 </textFill>
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextArea fx:id="output" layoutX="27.0" layoutY="28.0" prefHeight="100.0" prefWidth="114.0" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="32.0" />
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+          </children>
+        </AnchorPane>
+      </items>
+    </SplitPane>
+    <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" VBox.vgrow="NEVER">
+      <children>
+        <Label fx:id="leftStatus" maxHeight="1.7976931348623157E308" maxWidth="-1.0" text="Left status" HBox.hgrow="ALWAYS">
+          <font>
+            <Font size="11.0" fx:id="x3" />
+          </font>
+          <textFill>
+            <Color blue="0.625" green="0.625" red="0.625" fx:id="x4" />
+          </textFill>
+        </Label>
+        <Pane prefHeight="-1.0" prefWidth="-1.0" HBox.hgrow="ALWAYS" />
+        <Label fx:id="rightStatus" font="$x3" maxWidth="-1.0" text="Right status" textFill="$x4" HBox.hgrow="NEVER" />
+      </children>
+      <padding>
+        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+      </padding>
+    </HBox>
+  </children>
+</VBox>

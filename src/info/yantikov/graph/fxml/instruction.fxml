@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="626.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label text="Инструкция по работе с программой">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+         </VBox.margin>
+      </Label>
+      <ScrollPane prefHeight="433.0" prefWidth="595.0" vvalue="0.97">
+        <content>
+          <AnchorPane prefHeight="298.0" prefWidth="571.0">
+               <children>
+                  <VBox layoutX="14.0" layoutY="10.0" prefHeight="372.0" prefWidth="444.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="1. Создание графа">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="4.0" />
+                           </VBox.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Добавление вершины&#10;Нажмите на соответствующую кнопку">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="4.0" left="16.0" />
+                           </VBox.margin>
+                        </Text>
+                        <ImageView fitHeight="133.0" fitWidth="241.0" pickOnBounds="true" preserveRatio="true">
+                           <VBox.margin>
+                              <Insets bottom="8.0" left="16.0" />
+                           </VBox.margin>
+                           <image>
+                              <Image url="@../../../../image/addvertex.png" />
+                           </image>
+                        </ImageView>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Нажмите на область графа, чтобы добавить вершину">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="4.0" left="16.0" />
+                           </VBox.margin>
+                        </Text>
+                        <ImageView fitHeight="161.0" fitWidth="354.0" pickOnBounds="true" preserveRatio="true">
+                           <VBox.margin>
+                              <Insets bottom="8.0" left="16.0" />
+                           </VBox.margin>
+                           <image>
+                              <Image url="@../../../../image/addvertex2.PNG" />
+                           </image>
+                        </ImageView>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Чтобы удалить вершину, нажмите на одноименную кнопку и кликните &#10;по нужной вершине">
+                           <VBox.margin>
+                              <Insets bottom="4.0" left="16.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <ImageView fitHeight="132.0" fitWidth="273.0" pickOnBounds="true" preserveRatio="true">
+                           <VBox.margin>
+                              <Insets bottom="8.0" left="16.0" />
+                           </VBox.margin>
+                           <image>
+                              <Image url="@../../../../image/removevertex.PNG" />
+                           </image>
+                        </ImageView>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Добавление ребер&#10;Чтобы добавить ребро, нажмите на соответствующую кнокпу, &#10;затем кликните по двум вершинам, которые хотите соединить">
+                           <VBox.margin>
+                              <Insets bottom="4.0" left="16.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <ImageView fitHeight="207.0" fitWidth="313.0" pickOnBounds="true" preserveRatio="true">
+                           <VBox.margin>
+                              <Insets bottom="8.0" left="16.0" />
+                           </VBox.margin>
+                           <image>
+                              <Image url="@../../../../image/addedge.PNG" />
+                           </image>
+                        </ImageView>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Чтобы заменить все ребер нужно:&#10;a) Кликнуть по ребру, и ввести значение в матрице смежности&#10;б) Дважды кликнуть по ячейке в матрице смежности и ввести значение">
+                           <VBox.margin>
+                              <Insets bottom="4.0" left="16.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <ImageView fitHeight="142.0" fitWidth="559.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../image/changeweight.PNG" />
+                           </image>
+                           <VBox.margin>
+                              <Insets bottom="8.0" left="16.0" />
+                           </VBox.margin>
+                        </ImageView>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Чтобы удалить ребро, нажмите на кнопку Удалить ребро и кликните&#10;по нужному ребру">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="4.0" left="16.0" />
+                           </VBox.margin>
+                        </Text>
+                        <ImageView fitHeight="166.0" fitWidth="334.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../image/removevertex.PNG" />
+                           </image>
+                           <VBox.margin>
+                              <Insets bottom="8.0" left="16.0" />
+                           </VBox.margin>
+                        </ImageView>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Чтобы удалить граф нажмите на кнопку Очистить все">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="4.0" left="16.0" />
+                           </VBox.margin>
+                        </Text>
+                        <ImageView fitHeight="181.0" fitWidth="464.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../image/clearall.PNG" />
+                           </image>
+                           <VBox.margin>
+                              <Insets bottom="8.0" left="16.0" />
+                           </VBox.margin>
+                        </ImageView>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="2. Нахождение кратчайших расстояний">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Чтобы найти кратчайшее расстояние от одной вершины до всех остальных&#10;методом Дейкстра, нужно нажать на одноименную кнопку и кликнуть&#10;по вершине, от которой будут считаться расстояния">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="4.0" left="16.0" />
+                           </VBox.margin>
+                        </Text>
+                        <ImageView fitHeight="334.0" fitWidth="530.0" pickOnBounds="true" preserveRatio="true">
+                           <VBox.margin>
+                              <Insets bottom="8.0" left="16.0" />
+                           </VBox.margin>
+                           <image>
+                              <Image url="@../../../../image/deikstra.PNG" />
+                           </image>
+                        </ImageView>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Аналогичными действиями находим расстояния по методу Беллмана-Форда">
+                           <VBox.margin>
+                              <Insets bottom="4.0" left="16.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <ImageView fitHeight="328.0" fitWidth="530.0" pickOnBounds="true" preserveRatio="true">
+                           <VBox.margin>
+                              <Insets bottom="8.0" left="16.0" />
+                           </VBox.margin>
+                           <image>
+                              <Image url="@../../../../image/ford.PNG" />
+                           </image>
+                        </ImageView>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Таблицу кратчайших расстояний можно найти, нажав на кнопку Флойд-Уоршелл">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="4.0" left="16.0" />
+                           </VBox.margin>
+                        </Text>
+                        <ImageView fitHeight="331.0" fitWidth="530.0" pickOnBounds="true" preserveRatio="true">
+                           <VBox.margin>
+                              <Insets bottom="8.0" left="16.0" />
+                           </VBox.margin>
+                           <image>
+                              <Image url="@../../../../image/floyd.PNG" />
+                           </image>
+                        </ImageView>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="3. Дополнительные действия">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="4.0" />
+                           </VBox.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Чтобы распечать результат, нажмите на меню Действия/Печать.&#10;В открывшемся диалоговом окне, введите установите параметры">
+                           <VBox.margin>
+                              <Insets bottom="4.0" left="16.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <ImageView fitHeight="170.0" fitWidth="246.0" pickOnBounds="true" preserveRatio="true">
+                           <VBox.margin>
+                              <Insets bottom="8.0" left="16.0" />
+                           </VBox.margin>
+                           <image>
+                              <Image url="@../../../../image/print.PNG" />
+                           </image>
+                        </ImageView>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Чтобы изменить цвет темы или вершин нажмите на меню Цвета/Палитра.&#10;В открывшимся диалоговом окне, установите требуемые цвета&#10;Также вы можете установить цвета по умолчанию">
+                           <VBox.margin>
+                              <Insets bottom="4.0" left="16.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <ImageView fitHeight="252.0" fitWidth="446.0" pickOnBounds="true" preserveRatio="true">
+                           <VBox.margin>
+                              <Insets bottom="8.0" left="16.0" />
+                           </VBox.margin>
+                           <image>
+                              <Image url="@../../../../image/palette.PNG" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+   </children>
+</VBox>
